@@ -13,6 +13,10 @@ import { UrediKontaktComponent } from './ui/imenik/uredi-kontakt/uredi-kontakt.c
 import { DetaljiKontaktaComponent } from './ui/imenik/detalji-kontakta/detalji-kontakta.component';
 import { HomeComponent } from './ui/imenik/home/home.component';
 import { NavigationComponent } from './ui/shared/navigation/navigation.component';
+import { ShortNamePipe } from './short-name.pipe';
+import { TestTableComponent } from './ui/shared/test-table/test-table.component';
+// import { DialogComponent } from './ui/dialog/dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -24,15 +28,19 @@ import { NavigationComponent } from './ui/shared/navigation/navigation.component
     UrediKontaktComponent,
     DetaljiKontaktaComponent,
     HomeComponent,
-    NavigationComponent
+    NavigationComponent,
+    ShortNamePipe,
+    TestTableComponent,
+    // DialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

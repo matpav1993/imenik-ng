@@ -19,11 +19,13 @@ export class KontaktiService {
 
   }
 
-  saveKontakti(kontakti) {
+  private saveKontakti(kontakti) {
     localStorage.setItem('kontakti', JSON.stringify(kontakti));
   }
 
   addKontakt(kontakt) {
+
+    kontakt.id = this.generateId()
 
     let kontakti = this.getKontakti();
     kontakti.push(kontakt);
@@ -61,7 +63,7 @@ export class KontaktiService {
     this.saveKontakti(kontakti);
   }
 
-  generateId() {
+  private generateId() {
     let min = 999;
     let max = 999999;
     return Math.floor(Math.random() * (max - min)) + min;
