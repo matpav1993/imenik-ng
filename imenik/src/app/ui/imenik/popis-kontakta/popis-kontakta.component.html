@@ -34,21 +34,20 @@
           <mat-icon>more_horiz</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="Detalji()">
+          <button mat-menu-item (click)="Detalji(element.Id)">
             <mat-icon>dialpad</mat-icon>
             <span>Detalji</span>
           </button>
-          <button mat-menu-item (click)="Uredi()">
+          <button mat-menu-item (click)="Uredi(element.Id)">
             <mat-icon>mode_edit</mat-icon>
             <span>Uređivanje</span>
           </button>
-          <button mat-menu-item (click)="Obrisi()">
-            <mat-icon>
               <div class="dialog">
-                <button mat-raised-button (click)="showDialog()" color="primary">Show Dialog</button>
-              </div></mat-icon>
-            <span>Brisanje</span>
-          </button>
+                <button mat-menu-item (click)="Brisanje(element.Id, element.Ime, element.Prezime)" color="primary"> 
+                   <mat-icon>delete_outline</mat-icon>
+                  <span>Brisanje</span>
+                  </button>
+              </div>  
         </mat-menu>
       </td>
     </ng-container>

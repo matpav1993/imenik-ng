@@ -15,8 +15,9 @@ import { HomeComponent } from './ui/imenik/home/home.component';
 import { NavigationComponent } from './ui/shared/navigation/navigation.component';
 import { ShortNamePipe } from './short-name.pipe';
 import { TestTableComponent } from './ui/shared/test-table/test-table.component';
-// import { DialogComponent } from './ui/dialog/dialog.component';
-
+import { DialogBrisanjeComponent } from './ui/shared/dialogs/dialog-brisanje/dialog-brisanje.component';
+import { NatragButtonComponent } from './ui/natrag-button/natrag-button.component';
+import { UnicornAppThemeComponent } from './ui/unicorn-app-theme/unicorn-app-theme.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { TestTableComponent } from './ui/shared/test-table/test-table.component'
     NavigationComponent,
     ShortNamePipe,
     TestTableComponent,
-    // DialogComponent
+    DialogBrisanjeComponent,
+    NatragButtonComponent,
+    UnicornAppThemeComponent
   ],
   imports: [
     BrowserModule,

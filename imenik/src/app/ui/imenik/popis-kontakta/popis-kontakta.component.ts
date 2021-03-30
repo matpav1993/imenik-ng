@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, ViewChild, OnInit} from '@angular/core';
+import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { KontaktiService } from 'src/app/services/kontakti.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-// import { DialogComponent } from '../../dialog/dialog.component';
+import { DialogBrisanjeComponent } from '../../shared/dialogs/dialog-brisanje/dialog-brisanje.component';
 
 @Component({
   selector: 'app-popis-kontakta',
@@ -15,7 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class PopisKontaktaComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  
+
   displayedColumns: string[] = ['ini', 'Ime', 'Prezime', 'actions'];
   dataSource: MatTableDataSource<any>;
 
@@ -34,55 +34,62 @@ export class PopisKontaktaComponent implements OnInit, AfterViewInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
- 
+
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
 
+  }
+
+  btnClick = function () {
+    this.router.navigate(['/dodaj']);
+  };
+
+  Detalji = function (idKontakta: number) {
+    this.router.navigate(['/detalji/' + idKontakta]);
+  };
+
+  Uredi = function (idKontakta: number) {
+    this.router.navigate(['/uredi/' + idKontakta]);
+  };
+
+  Brisanje(idKontakta: number, ime: string, prezime: string) {
+    const dialogRef = this.dialog.open(DialogBrisanjeComponent, {
+      data: { title: 'Jeste li sigurni da želite obrisati ovaj kontakt?', imePrezime: ime + ' ' + prezime  }
+    });
+
+    dialogRef.afterClosed().subscribe(data => {
+      if (data){
+        this.kontaktiService.deleteKontakt(idKontakta);
+        this.dataSource = new MatTableDataSource(this.kontaktiService.getKontakti());
+      }
+    });
+
+    // setTimeout(() => {
+    //   dialogRef.close();
+    // }, 10000);
+  }
+
+  // Obrisi= function (deleteKontakt) {};
+  // export class TableOverviewExample implements AfterViewInit {
+  //   displayedColumns: string[] = ['ini', 'ime', 'prezime', 'actions'];
+  //   dataSource: MatTableDataSource<any>;
+
+
+  // constructor() {
+
+  //   const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
+  //   this.dataSource = new MatTableDataSource(users);
+  // }
+
 }
 
-btnClick= function () {
-  this.router.navigate(['/dodaj']);
-};
-
-Detalji= function () {
-  this.router.navigate(['/detalji']);
-};
-
-Uredi= function () {
-  this.router.navigate(['/uredi']);
-};
-
-showDialog(){
-  // const dialogRef = this.dialog.open(DialogComponent, {
-  //   width: '450px',
-  //   height: '200px'
-  // }); 
-  // setTimeout(() => {
-  //   dialogRef.close();
-  // }, 10000);
-}
-
-// Obrisi= function (deleteKontakt) {};
-// export class TableOverviewExample implements AfterViewInit {
-//   displayedColumns: string[] = ['ini', 'ime', 'prezime', 'actions'];
-//   dataSource: MatTableDataSource<any>;
-  
-
-    // constructor() {
-    
-    //   const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
-    //   this.dataSource = new MatTableDataSource(users);
-    // }
-    
-}
-  
-  /** Builds and returns a new User. */
+/** Builds and returns a new User. */
   // function createNewUser(id: number): any {
   //   const ime = ime[Math.round(Math.random() * (Ime.length - 1))] + ' ' +
   //      ime [Math.round(Math.random() * (Ime.length - 1))].charAt(0) + '.';
-  
+
   //   return {
   //     name: name,
   //     progress: Math.round(Math.random() * 100).toString()
@@ -90,5 +97,5 @@ showDialog(){
   // }
 
 
-  
+
 

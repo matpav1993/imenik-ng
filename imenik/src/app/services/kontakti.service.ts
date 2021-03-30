@@ -50,6 +50,9 @@ export class KontaktiService {
 
     kontakti[indexKontakta].Ime = kontakt.Ime;
     kontakti[indexKontakta].Prezime = kontakt.Prezime;
+    kontakti[indexKontakta].Telefon = kontakt.Telefon;
+    kontakti[indexKontakta].Email = kontakt.Email;
+    kontakti[indexKontakta].Opis = kontakt.Opis;
 
     this.saveKontakti(kontakti);
 

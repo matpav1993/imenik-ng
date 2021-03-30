@@ -1,75 +1,79 @@
 <mat-card>
-<mat-tab-group dynamicHeight>
-  <mat-tab label="Novi Kontakt">
+  <app-natrag-button></app-natrag-button>
+  <mat-tab-group dynamicHeight>
+    <mat-tab label="Novi Kontakt">
 
-<mat-vertical-stepper [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Ime i Prezime</ng-template>
-        <mat-form-field>
-          <mat-label>Ime, Prezime</mat-label>
-          <input matInput placeholder="npr. Ana, Anic" formControlName="firstCtrl" required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperNext ><i class="material-icons">navigate_next</i>Dalje</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step [stepControl]="secondFormGroup">
-      <form [formGroup]="secondFormGroup">
-        <ng-template matStepLabel>Telefonski Broj</ng-template>
-         <form class="example-form">
-                    <mat-form-field class="example-full-width">
-                      <mat-label>Telefonski broj</mat-label>
-                      <span matPrefix>+385 &nbsp;</span>
-                      <input type="tel" matInput placeholder="555-555-1234" formControlName="secondCtrl" required>
-                    </mat-form-field>
-                    <button  mat-mini-fab color="accent"><i class="material-icons">add_call</i></button>
-                  </form>
-        <div>
-          
-          <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Nazad</button>
-          <button mat-button matStepperNext><i class="material-icons">navigate_next</i>Dalje</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup">
-          <ng-template matStepLabel>Email</ng-template>
-          <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="test@example.com" formControlName="firstCtrl" required >
-          </mat-form-field>
-          <div>
-            <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Nazad</button>
-            <button mat-button matStepperNext><i class="material-icons">navigate_next</i>Dalje</button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup">
-          <ng-template matStepLabel>Opis</ng-template>
-          <mat-form-field>
-            <mat-label>Opis</mat-label>
-            <input matInput placeholder="opis" formControlName="firstCtrl">
-          </mat-form-field>
-          <div>
-            <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Nazad</button>
-            <button mat-button matStepperNext (click)="btnClick();"><i class="material-icons" >save</i>Spremi</button>
-          </div>
-        </form>
-      </mat-step>
-    <!-- <mat-step>
+      <mat-vertical-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Ime, Prezime</ng-template>
+            <mat-form-field>
+              <mat-label>Ime</mat-label>
+              <input matInput placeholder="npr. Ana" formControlName="ime" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <mat-label>Prezime</mat-label>
+              <input matInput placeholder="npr. Anić" formControlName="prezime" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext ><i class="material-icons">navigate_next</i>Dalje</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Telefonski Broj</ng-template>
+            <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <mat-label>Telefonski broj</mat-label>
+                <span matPrefix>+385 &nbsp;</span>
+                <input type="tel" matInput placeholder="555-555-1234" formControlName="telefonskiBroj" required>
+              </mat-form-field>
+              <!-- <button mat-mini-fab color="accent"><i class="material-icons">add_call</i></button> -->
+            </form>
+            <div>
+
+              <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Nazad</button>
+              <button mat-button matStepperNext><i class="material-icons">navigate_next</i>Dalje</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Email</ng-template>
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="test@example.com" formControlName="email" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Nazad</button>
+              <button mat-button matStepperNext><i class="material-icons">navigate_next</i>Dalje</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Opis</ng-template>
+            <mat-form-field>
+              <mat-label>Opis</mat-label>
+              <input matInput placeholder="opis" formControlName="opis">
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Nazad</button>
+              <button mat-button matStepperNext (click)="Spremi();" [disabled]="!firstFormGroup.valid"><i class="material-icons">save</i>Spremi</button>
+            </div>
+          </form>
+        </mat-step>
+        <!-- <mat-step>
       <ng-template matStepLabel>Novi kontakt</ng-template>
       <div>
         <button mat-button matStepperPrevious>Nazad</button>
         <button mat-button (click)="stepper.reset()">Unes novi kontakt</button>
       </div>
     </mat-step> -->
-  </mat-vertical-stepper>
+      </mat-vertical-stepper>
 
-</mat-tab>
-</mat-tab-group>
+    </mat-tab>
+  </mat-tab-group>
 </mat-card>
-
-  

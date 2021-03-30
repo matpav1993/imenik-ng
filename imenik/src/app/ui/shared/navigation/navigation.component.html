@@ -1,14 +1,14 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row>
-
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-            <mat-icon>menu</mat-icon>
-        </button>
-        <span class="example-spacer"></span>
-        <span>Imenik</span>
-
+    <mat-toolbar-row> 
+<span>Imenik</span>
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [class.d-none]="!jeUlogiran">
             <mat-icon>search</mat-icon>
         </button>
+ <span class="example-spacer"></span>
+ <mat-icon >brightness_5</mat-icon>
+ <mat-slide-toggle [formControl]="toggle" color="primary" style="position: right;"></mat-slide-toggle>
+ <mat-icon>bedtime</mat-icon>
     </mat-toolbar-row>
 </mat-toolbar>
+
+
