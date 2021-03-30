@@ -7,6 +7,6 @@ import { Component, HostBinding, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   title = 'imenik';
-  @ViewChild('app', {static: true}) app;
+
   
 }
