@@ -49,9 +49,6 @@ export class DodajKontaktComponent implements OnInit {
       
     };
 
- 
-
-    let First = this.firstFormGroup.value;
     this.kontaktiService.addKontakt(kontakti);
 
     this.router.navigate(['/popis']);

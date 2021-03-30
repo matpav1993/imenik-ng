@@ -1,6 +1,4 @@
-import { OverlayContainer } from '@angular/cdk/overlay';
-import { Component, HostBinding, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, Input, OnInit, Renderer2 } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service';
 
 @Component({
@@ -9,21 +7,28 @@ import { AccountService } from 'src/app/services/account.service';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-  
+  @Input() app;
   jeUlogiran: boolean = false;
-  toggle = new FormControl(false);
-  @HostBinding('class') className = '';
+  private toggle : boolean = false;
 
-  constructor(private accountService: AccountService, private overlay: OverlayContainer) { }
+  constructor(private accountService: AccountService,
+    private renderer: Renderer2) { }
 
   ngOnInit(): void {
+
     //provjeri jeli ulogiran
     this.jeUlogiran = this.accountService.jeUlogiran;
-    
-    this.toggle.valueChanges.subscribe((darkMode) => {
-      const darkClassName = 'darkMode';
-      this.className = darkMode ? darkClassName : '';
-    });
-  
- 
-}}
+
+  }
+
+  changeThema() {
+    const hasClass = this.app.classList.contains('custom-theme');
+      if(hasClass) {
+        this.renderer.removeClass(this.app, 'custom-theme');
+      } else {
+        this.renderer.addClass(this.app, 'custom-theme');
+      }
+    }
+
+}
+

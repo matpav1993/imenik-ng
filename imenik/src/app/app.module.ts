@@ -17,7 +17,6 @@ import { ShortNamePipe } from './short-name.pipe';
 import { TestTableComponent } from './ui/shared/test-table/test-table.component';
 import { DialogBrisanjeComponent } from './ui/shared/dialogs/dialog-brisanje/dialog-brisanje.component';
 import { NatragButtonComponent } from './ui/natrag-button/natrag-button.component';
-import { UnicornAppThemeComponent } from './ui/unicorn-app-theme/unicorn-app-theme.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { UnicornAppThemeComponent } from './ui/unicorn-app-theme/unicorn-app-the
     TestTableComponent,
     DialogBrisanjeComponent,
     NatragButtonComponent,
-    UnicornAppThemeComponent
   ],
   imports: [
     BrowserModule,

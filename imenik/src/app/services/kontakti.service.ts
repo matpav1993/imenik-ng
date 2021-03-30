@@ -25,7 +25,7 @@ export class KontaktiService {
 
   addKontakt(kontakt) {
 
-    kontakt.id = this.generateId()
+    kontakt.Id = this.generateId()
 
     let kontakti = this.getKontakti();
     kontakti.push(kontakt);
