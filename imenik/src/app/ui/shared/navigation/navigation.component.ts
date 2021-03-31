@@ -9,8 +9,8 @@ import { AccountService } from 'src/app/services/account.service';
 export class NavigationComponent implements OnInit {
   @Input() app;
   jeUlogiran: boolean = false;
-  private toggle : boolean = false;
-  
+  private toggle: boolean = false;
+
 
   constructor(private accountService: AccountService,
     private renderer: Renderer2) { }
@@ -24,12 +24,12 @@ export class NavigationComponent implements OnInit {
 
   changeThema() {
     const hasClass = this.app.classList.contains('custom-theme');
-      if(hasClass) {
-        this.renderer.removeClass(this.app, 'custom-theme');
-      } else {
-        this.renderer.addClass(this.app, 'custom-theme');
-      }
+    if (hasClass) {
+      this.renderer.removeClass(this.app, 'custom-theme');
+    } else {
+      this.renderer.addClass(this.app, 'custom-theme');
     }
+  }
 
 }
 

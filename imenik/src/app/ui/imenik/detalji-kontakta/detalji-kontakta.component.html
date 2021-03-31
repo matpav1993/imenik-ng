@@ -1,6 +1,5 @@
-
 <app-natrag-button></app-natrag-button>
- <div class="example-action-buttons">
+<div class="example-action-buttons">
   <button mat-button (click)="accordion.openAll()">Proširi sve</button>
   <button mat-button (click)="accordion.closeAll()">Suzi sve</button>
 </div>
@@ -52,7 +51,7 @@
       </mat-panel-title>
       <mat-panel-description>
         Email adresa
-        <mat-icon>email</mat-icon>        
+        <mat-icon>email</mat-icon>
       </mat-panel-description>
     </mat-expansion-panel-header>
 
@@ -64,28 +63,19 @@
     <a mat-button [href]="'mailto:' + kontakt.Email"><i class="material-icons">outgoing_mail</i></a>
   </mat-expansion-panel>
 
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      Opis
-    </mat-panel-title>
-    <mat-panel-description>
-     Dodatne informacije o kontaktu
-      <mat-icon>description</mat-icon>
-    </mat-panel-description>
-  </mat-expansion-panel-header>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Opis
+      </mat-panel-title>
+      <mat-panel-description>
+        Dodatne informacije o kontaktu
+        <mat-icon>description</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
 
-  <mat-form-field>
-    <mat-label>Opis</mat-label>
-    <input matInput>{{kontakt.Opis}}
-  </mat-form-field>
-</mat-expansion-panel>
-
-
-
-
-
-
-
-
-
+    <mat-form-field>
+      <mat-label>Opis</mat-label>
+      <input matInput>{{kontakt.Opis}}
+    </mat-form-field>
+  </mat-expansion-panel>

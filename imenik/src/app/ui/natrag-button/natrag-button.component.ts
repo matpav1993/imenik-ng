@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-natrag-button',

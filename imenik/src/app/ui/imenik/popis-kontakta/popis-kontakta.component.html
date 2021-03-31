@@ -3,11 +3,11 @@
   <input matInput (keyup)="applyFilter($event)" placeholder="npr.Mia" #input>
 </mat-form-field>
 
-<button mat-flat-button color="accent" style="float: right;"  (click)="btnClick();">Dodaj novi kontakt</button>
+<button mat-flat-button color="accent" style="float: right;" (click)="btnClick();">Dodaj novi kontakt</button>
 
 <mat-card class="card-popis">
 
-  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 w-100" >
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 w-100">
 
     <ng-container matColumnDef="ini">
       <th mat-header-cell *matHeaderCellDef class="w-10"></th>
@@ -42,12 +42,12 @@
             <mat-icon>mode_edit</mat-icon>
             <span>Uređivanje</span>
           </button>
-              <div class="dialog">
-                <button mat-menu-item (click)="Brisanje(element.Id, element.Ime, element.Prezime)" color="primary"> 
-                   <mat-icon>delete_outline</mat-icon>
-                  <span>Brisanje</span>
-                  </button>
-              </div>  
+          <div class="dialog">
+            <button mat-menu-item (click)="Brisanje(element.Id, element.Ime, element.Prezime)" color="primary">
+              <mat-icon>delete_outline</mat-icon>
+              <span>Brisanje</span>
+            </button>
+          </div>
         </mat-menu>
       </td>
     </ng-container>
@@ -64,10 +64,4 @@
   </table>
 </mat-card>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-  
-
-
-
-
-
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>

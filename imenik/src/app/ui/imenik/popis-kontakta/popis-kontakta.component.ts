@@ -56,45 +56,22 @@ export class PopisKontaktaComponent implements OnInit, AfterViewInit {
 
   Brisanje(idKontakta: number, ime: string, prezime: string) {
     const dialogRef = this.dialog.open(DialogBrisanjeComponent, {
-      data: { title: 'Jeste li sigurni da želite obrisati ovaj kontakt?', imePrezime: ime + ' ' + prezime  }
+      data: { title: 'Jeste li sigurni da želite obrisati ovaj kontakt?', imePrezime: ime + ' ' + prezime }
     });
 
     dialogRef.afterClosed().subscribe(data => {
-      if (data){
+      if (data) {
         this.kontaktiService.deleteKontakt(idKontakta);
         this.dataSource = new MatTableDataSource(this.kontaktiService.getKontakti());
       }
     });
 
-    // setTimeout(() => {
-    //   dialogRef.close();
-    // }, 10000);
+
   }
 
-  // Obrisi= function (deleteKontakt) {};
-  // export class TableOverviewExample implements AfterViewInit {
-  //   displayedColumns: string[] = ['ini', 'ime', 'prezime', 'actions'];
-  //   dataSource: MatTableDataSource<any>;
-
-
-  // constructor() {
-
-  //   const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
-  //   this.dataSource = new MatTableDataSource(users);
-  // }
 
 }
 
-/** Builds and returns a new User. */
-  // function createNewUser(id: number): any {
-  //   const ime = ime[Math.round(Math.random() * (Ime.length - 1))] + ' ' +
-  //      ime [Math.round(Math.random() * (Ime.length - 1))].charAt(0) + '.';
-
-  //   return {
-  //     name: name,
-  //     progress: Math.round(Math.random() * 100).toString()
-  //   };
-  // }
 
 
 

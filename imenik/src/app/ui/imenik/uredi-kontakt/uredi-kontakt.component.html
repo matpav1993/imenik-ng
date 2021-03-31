@@ -17,7 +17,7 @@
               <input matInput placeholder="npr. Anić" formControlName="prezime" required>
             </mat-form-field>
             <div>
-              <button mat-button matStepperNext ><i class="material-icons">navigate_next</i>Dalje</button>
+              <button mat-button matStepperNext><i class="material-icons">navigate_next</i>Dalje</button>
             </div>
           </form>
         </mat-step>
@@ -61,7 +61,8 @@
             </mat-form-field>
             <div>
               <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Nazad</button>
-              <button mat-button matStepperNext (click)="Spremi();" [disabled]="!firstFormGroup.valid"><i class="material-icons">save</i>Spremi</button>
+              <button mat-button matStepperNext (click)="Spremi();" [disabled]="!firstFormGroup.valid"><i
+                  class="material-icons">save</i>Spremi</button>
             </div>
           </form>
         </mat-step>

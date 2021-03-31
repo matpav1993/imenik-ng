@@ -46,7 +46,7 @@ export class DodajKontaktComponent implements OnInit {
       "Telefon": this.telefonskiBroj.value,
       "Email": this.email.value,
       "Opis": this.opis.value
-      
+
     };
 
     this.kontaktiService.addKontakt(kontakti);
@@ -57,27 +57,27 @@ export class DodajKontaktComponent implements OnInit {
   // Getters
 
 
-  
-  get ime(){
+
+  get ime() {
     return this.firstFormGroup.get('ime');
   }
 
-  get prezime(){
+  get prezime() {
     return this.firstFormGroup.get('prezime');
   }
 
-  get telefonskiBroj(){
+  get telefonskiBroj() {
     return this.firstFormGroup.get('telefonskiBroj');
   }
 
 
-  get opis(){
+  get opis() {
     return this.firstFormGroup.get('opis');
   }
 
-  get email(){
+  get email() {
     return this.firstFormGroup.get('email');
   }
 
-  
+
 }

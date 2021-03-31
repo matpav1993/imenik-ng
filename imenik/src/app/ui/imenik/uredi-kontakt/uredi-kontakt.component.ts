@@ -41,7 +41,7 @@ export class UrediKontaktComponent implements OnInit {
         this.id = id;
 
         var kontakt = this.kontaktiService.getKontakt(id);
-        
+
         // this.firstFormGroup.setValue(kontakt);
         this.ime.setValue(kontakt.Ime);
         this.prezime.setValue(kontakt.Prezime);
@@ -52,7 +52,7 @@ export class UrediKontaktComponent implements OnInit {
       }
     });
 
-    
+
 
 
   }

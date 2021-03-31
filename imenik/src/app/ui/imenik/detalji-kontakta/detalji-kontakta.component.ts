@@ -16,12 +16,12 @@ export class DetaljiKontaktaComponent implements OnInit {
   kontakt: any;
 
   constructor(
-      private kontaktiService: KontaktiService,
-      private route: ActivatedRoute,
-      private router: Router) { }
-  
+    private kontaktiService: KontaktiService,
+    private route: ActivatedRoute,
+    private router: Router) { }
+
   ngOnInit(): void {
-    
+
     this.route.paramMap.subscribe(params => {
       if (params.get('id') != null) {
         let id = +params.get('id');
@@ -38,9 +38,9 @@ export class DetaljiKontaktaComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.kontaktiService.getKontakti());
 
 
-    
-  this.router.navigate(['/detalji']);
-  
+
+    this.router.navigate(['/detalji']);
+
 
   }
 
@@ -65,9 +65,5 @@ export class DetaljiKontaktaComponent implements OnInit {
     return this.kontakt.get('email');
   }
 
-
-
-   
-  
 
 }

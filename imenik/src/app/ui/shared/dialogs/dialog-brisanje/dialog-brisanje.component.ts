@@ -15,16 +15,16 @@ export class DialogBrisanjeComponent implements OnInit {
 
   dataSource: MatTableDataSource<any>;
 
-  
+
   constructor(
-    private kontaktiService: KontaktiService, 
+    private kontaktiService: KontaktiService,
     private router: Router,
     public dialogRef: MatDialogRef<DialogBrisanjeComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     overlayContainer: OverlayContainer
-    ) { 
-      overlayContainer.getContainerElement().classList.add('custom-theme');
-    }
+  ) {
+    overlayContainer.getContainerElement().classList.add('custom-theme');
+  }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.kontaktiService.getKontakti());
