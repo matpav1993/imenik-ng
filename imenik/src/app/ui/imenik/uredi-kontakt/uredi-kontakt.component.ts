@@ -51,14 +51,7 @@ export class UrediKontaktComponent implements OnInit {
 
       }
     });
-
-
-
-
   }
-
-
-
   OnInit(): void {
     this.dataSource = new MatTableDataSource(this.kontaktiService.getKontakti());
 

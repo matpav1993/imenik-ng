@@ -17,7 +17,7 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit(): void {
 
-    //provjeri jeli ulogiran
+    //provjeri je li ulogiran
     this.jeUlogiran = this.accountService.jeUlogiran;
 
   }

@@ -51,17 +51,11 @@
         </mat-menu>
       </td>
     </ng-container>
-
-
-
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let element; columns: displayedColumns;"></tr>
-
     <tr class="mat-row" *matNoDataRow>
       <td class="mat-cell" colspan="5">Nema rezultata...</td>
     </tr>
-
   </table>
 </mat-card>
-
 <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
