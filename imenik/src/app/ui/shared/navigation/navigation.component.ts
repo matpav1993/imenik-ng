@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Renderer2 } from '@angular/core';
+import { Component, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service';
 
 @Component({
@@ -10,6 +10,7 @@ export class NavigationComponent implements OnInit {
   @Input() app;
   jeUlogiran: boolean = false;
   private toggle : boolean = false;
+  
 
   constructor(private accountService: AccountService,
     private renderer: Renderer2) { }
