@@ -23,12 +23,12 @@ export class TestTableComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private KontaktiService: KontaktiService,  private router: Router) {
+  constructor(private kontaktiService: KontaktiService) {
     // Create 100 users
     // const users = [];
 
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(this.KontaktiService.getKontakti());
+    this.dataSource = new MatTableDataSource(this.kontaktiService.getKontakti());
   }
 
   // ngOnInit(): void {
@@ -41,11 +41,11 @@ export class TestTableComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.KontaktiService.getKontakti());
+    this.dataSource = new MatTableDataSource(this.kontaktiService.getKontakti());
   }
 
-    
-   
+
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -58,11 +58,11 @@ export class TestTableComponent implements OnInit, AfterViewInit {
   // btnClick= function () {
   //   this.router.navigate(['/dodaj']);
   // };
-  
+
   // Detalji= function () {
   //   this.router.navigate(['/detalji']);
   // };
-  
+
   // Uredi= function () {
   //   this.router.navigate(['/uredi']);
   // };

@@ -8,12 +8,12 @@ import { AccountService } from 'src/app/services/account.service';
 })
 export class NavigationComponent implements OnInit {
   @Input() app;
-  jeUlogiran: boolean = false;
-  private toggle: boolean = false;
+  jeUlogiran = false;
+  private toggle = false;
 
 
   constructor(private accountService: AccountService,
-    private renderer: Renderer2) { }
+              private renderer: Renderer2) { }
 
   ngOnInit(): void {
 

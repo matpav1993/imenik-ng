@@ -24,7 +24,7 @@ export class DetaljiKontaktaComponent implements OnInit {
 
     this.route.paramMap.subscribe(params => {
       if (params.get('id') != null) {
-        let id = +params.get('id');
+        const id = +params.get('id');
         this.id = id;
 
         this.kontakt = this.kontaktiService.getKontakt(id);

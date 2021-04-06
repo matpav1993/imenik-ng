@@ -42,15 +42,15 @@ export class PopisKontaktaComponent implements OnInit, AfterViewInit {
 
   }
 
-  btnClick = function () {
+  btnClick = function() {
     this.router.navigate(['/dodaj']);
   };
 
-  Detalji = function (idKontakta: number) {
+  Detalji = function(idKontakta: number) {
     this.router.navigate(['/detalji/' + idKontakta]);
   };
 
-  Uredi = function (idKontakta: number) {
+  Uredi = function(idKontakta: number) {
     this.router.navigate(['/uredi/' + idKontakta]);
   };
 
