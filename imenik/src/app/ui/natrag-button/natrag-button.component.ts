@@ -12,7 +12,7 @@ export class NatragButtonComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  backClicked() {
+  backClicked(): void {
     this.location.back();
   }
 

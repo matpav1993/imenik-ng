@@ -19,7 +19,7 @@ export class NavigationComponent implements OnInit {
 
   }
 
-  changeThema() {
+  changeThema(): void {
     const hasClass = this.app.classList.contains('custom-theme');
     if (hasClass) {
       this.renderer.removeClass(this.app, 'custom-theme');

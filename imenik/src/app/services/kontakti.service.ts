@@ -7,7 +7,7 @@ export class KontaktiService {
 
   constructor() { }
 
-  getKontakti() : any {
+  getKontakti(): any {
 
     const kontakti = localStorage.getItem('kontakti');
 
@@ -19,11 +19,11 @@ export class KontaktiService {
 
   }
 
-  private saveKontakti(kontakti) : void {
+  private saveKontakti(kontakti): void {
     localStorage.setItem('kontakti', JSON.stringify(kontakti));
   }
 
-  addKontakt(kontakt) : void {
+  addKontakt(kontakt): void {
 
     kontakt.Id = this.generateId();
 
@@ -31,11 +31,10 @@ export class KontaktiService {
     kontakti.push(kontakt);
 
     this.saveKontakti(kontakti);
-    
 
   }
 
-  getKontakt(id) : any {
+  getKontakt(id): any {
 
     const kontakti = this.getKontakti();
     const indexKontakta = kontakti.findIndex((k => k.Id === id));
@@ -44,7 +43,7 @@ export class KontaktiService {
 
   }
 
-  updateKontakt(kontakt) : void {
+  updateKontakt(kontakt): void {
 
     const kontakti = this.getKontakti();
     const indexKontakta = kontakti.findIndex((k => k.Id === kontakt.Id));
@@ -59,7 +58,7 @@ export class KontaktiService {
 
   }
 
-  deleteKontakt(id) : void {
+  deleteKontakt(id): void {
 
     let kontakti = this.getKontakti();
     kontakti = kontakti.filter(k => k.Id !== id);
@@ -67,7 +66,7 @@ export class KontaktiService {
     this.saveKontakti(kontakti);
   }
 
-  private generateId() : number {
+  private generateId(): number {
     const min = 999;
     const max = 999999;
     return Math.floor(Math.random() * (max - min)) + min;

@@ -35,6 +35,7 @@ export class UrediKontaktComponent implements OnInit {
 
     });
 
+    // tslint:disable-next-line: deprecation
     this.route.paramMap.subscribe(params => {
       if (params.get('id') != null) {
         const id = +params.get('id');
@@ -57,7 +58,7 @@ export class UrediKontaktComponent implements OnInit {
 
   }
 
-  Spremi = function() {
+  Spremi = function(): void {
 
     const kontakt = {
       Id: this.id,
@@ -73,23 +74,23 @@ export class UrediKontaktComponent implements OnInit {
   };
 
   // Getters
-  get ime() {
+  get ime(): any {
     return this.firstFormGroup.get('ime');
   }
 
-  get prezime() {
+  get prezime(): any {
     return this.firstFormGroup.get('prezime');
   }
 
-  get telefonskiBroj() {
+  get telefonskiBroj(): any {
     return this.firstFormGroup.get('telefonskiBroj');
   }
 
-  get opis() {
+  get opis(): any {
     return this.firstFormGroup.get('opis');
   }
 
-  get email() {
+  get email(): any {
     return this.firstFormGroup.get('email');
   }
 

@@ -37,7 +37,7 @@ export class DodajKontaktComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.kontaktiService.getKontakti());
   }
 
-  Spremi = function() {
+  Spremi = function(): void {
 
     const kontakti = {
       Id: this.id,
@@ -58,24 +58,24 @@ export class DodajKontaktComponent implements OnInit {
 
 
 
-  get ime() {
+  get ime(): any {
     return this.firstFormGroup.get('ime');
   }
 
-  get prezime() {
+  get prezime(): any {
     return this.firstFormGroup.get('prezime');
   }
 
-  get telefonskiBroj() {
+  get telefonskiBroj(): any {
     return this.firstFormGroup.get('telefonskiBroj');
   }
 
 
-  get opis() {
+  get opis(): any {
     return this.firstFormGroup.get('opis');
   }
 
-  get email() {
+  get email(): any {
     return this.firstFormGroup.get('email');
   }
 

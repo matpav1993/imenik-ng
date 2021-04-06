@@ -21,7 +21,7 @@ export class PopisKontaktaComponent implements OnInit, AfterViewInit {
 
   constructor(private kontaktiService: KontaktiService, private router: Router, public dialog: MatDialog) { }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
@@ -30,7 +30,7 @@ export class PopisKontaktaComponent implements OnInit, AfterViewInit {
     this.dataSource = new MatTableDataSource(this.kontaktiService.getKontakti());
   }
 
-  applyFilter(event: Event) {
+  applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
@@ -42,23 +42,24 @@ export class PopisKontaktaComponent implements OnInit, AfterViewInit {
 
   }
 
-  btnClick = function() {
+  btnClick = function(): void {
     this.router.navigate(['/dodaj']);
   };
 
-  Detalji = function(idKontakta: number) {
+  Detalji = function(idKontakta: number): void {
     this.router.navigate(['/detalji/' + idKontakta]);
   };
 
-  Uredi = function(idKontakta: number) {
+  Uredi = function(idKontakta: number): void {
     this.router.navigate(['/uredi/' + idKontakta]);
   };
 
-  Brisanje(idKontakta: number, ime: string, prezime: string) {
+  Brisanje(idKontakta: number, ime: string, prezime: string): void {
     const dialogRef = this.dialog.open(DialogBrisanjeComponent, {
       data: { title: 'Jeste li sigurni da želite obrisati ovaj kontakt?', imePrezime: ime + ' ' + prezime }
     });
 
+    // tslint:disable-next-line: deprecation
     dialogRef.afterClosed().subscribe(data => {
       if (data) {
         this.kontaktiService.deleteKontakt(idKontakta);

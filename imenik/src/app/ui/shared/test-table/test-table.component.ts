@@ -35,7 +35,7 @@ export class TestTableComponent implements OnInit, AfterViewInit {
   //   this.dataSource = new MatTableDataSource(this.kontaktiService.getKontakti());
   // }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
@@ -46,7 +46,7 @@ export class TestTableComponent implements OnInit, AfterViewInit {
 
 
 
-  applyFilter(event: Event) {
+  applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
