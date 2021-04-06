@@ -5,8 +5,7 @@
 
 <button mat-flat-button color="accent" style="float: right;" (click)="btnClick();">Dodaj novi kontakt</button>
 
-<mat-card class="card-popis">
-
+<div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 w-100">
 
     <ng-container matColumnDef="ini">
@@ -57,5 +56,5 @@
       <td class="mat-cell" colspan="5">Nema rezultata...</td>
     </tr>
   </table>
-</mat-card>
-<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

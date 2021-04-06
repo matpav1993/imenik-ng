@@ -17,9 +17,6 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit(): void {
 
-    //provjeri je li ulogiran
-    this.jeUlogiran = this.accountService.jeUlogiran;
-
   }
 
   changeThema() {

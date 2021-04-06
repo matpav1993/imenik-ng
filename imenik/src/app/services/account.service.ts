@@ -5,8 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class AccountService {
 
-  jeUlogiran: boolean;
-
   constructor() { }
 
 }

@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { LoginComponent } from './ui/account/login/login.component';
-import { RegisterComponent } from './ui/account/register/register.component';
 import { DodajKontaktComponent } from './ui/imenik/dodaj-kontakt/dodaj-kontakt.component';
 import { PopisKontaktaComponent } from './ui/imenik/popis-kontakta/popis-kontakta.component';
 import { UrediKontaktComponent } from './ui/imenik/uredi-kontakt/uredi-kontakt.component';
@@ -21,8 +19,6 @@ import { NatragButtonComponent } from './ui/natrag-button/natrag-button.componen
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
     DodajKontaktComponent,
     PopisKontaktaComponent,
     UrediKontaktComponent,
