@@ -7,9 +7,9 @@ export class KontaktiService {
 
   constructor() { }
 
-  getKontakti() {
+  getKontakti() : any {
 
-    let kontakti = localStorage.getItem('kontakti');
+    const kontakti = localStorage.getItem('kontakti');
 
     if (kontakti === null) {
       this.saveKontakti([]);
@@ -19,34 +19,35 @@ export class KontaktiService {
 
   }
 
-  private saveKontakti(kontakti) {
+  private saveKontakti(kontakti) : void {
     localStorage.setItem('kontakti', JSON.stringify(kontakti));
   }
 
-  addKontakt(kontakt) {
+  addKontakt(kontakt) : void {
 
-    kontakt.Id = this.generateId()
+    kontakt.Id = this.generateId();
 
-    let kontakti = this.getKontakti();
+    const kontakti = this.getKontakti();
     kontakti.push(kontakt);
 
     this.saveKontakti(kontakti);
+    
 
   }
 
-  getKontakt(id) {
+  getKontakt(id) : any {
 
-    let kontakti = this.getKontakti();
-    let indexKontakta = kontakti.findIndex((k => k.Id == id));
+    const kontakti = this.getKontakti();
+    const indexKontakta = kontakti.findIndex((k => k.Id === id));
 
     return kontakti[indexKontakta];
 
   }
 
-  updateKontakt(kontakt) {
+  updateKontakt(kontakt) : void {
 
-    let kontakti = this.getKontakti();
-    let indexKontakta = kontakti.findIndex((k => k.Id == kontakt.Id));
+    const kontakti = this.getKontakti();
+    const indexKontakta = kontakti.findIndex((k => k.Id === kontakt.Id));
 
     kontakti[indexKontakta].Ime = kontakt.Ime;
     kontakti[indexKontakta].Prezime = kontakt.Prezime;
@@ -58,17 +59,17 @@ export class KontaktiService {
 
   }
 
-  deleteKontakt(id) {
+  deleteKontakt(id) : void {
 
     let kontakti = this.getKontakti();
-    kontakti = kontakti.filter(k => k.Id !== id)
+    kontakti = kontakti.filter(k => k.Id !== id);
 
     this.saveKontakti(kontakti);
   }
 
-  private generateId() {
-    let min = 999;
-    let max = 999999;
+  private generateId() : number {
+    const min = 999;
+    const max = 999999;
     return Math.floor(Math.random() * (max - min)) + min;
   }
 

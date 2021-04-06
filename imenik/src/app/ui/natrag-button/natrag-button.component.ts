@@ -7,13 +7,13 @@ import { Location } from '@angular/common';
   styleUrls: ['./natrag-button.component.scss']
 })
 export class NatragButtonComponent implements OnInit {
-  @Input() mb: boolean = true;
-  constructor(private _location: Location) { }
+  @Input() mb = true;
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
   }
   backClicked() {
-    this._location.back();
+    this.location.back();
   }
 
 }

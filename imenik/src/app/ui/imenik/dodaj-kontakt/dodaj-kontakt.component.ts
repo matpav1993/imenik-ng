@@ -17,11 +17,11 @@ export class DodajKontaktComponent implements OnInit {
   id: number;
 
 
-  constructor(private kontaktiService: KontaktiService, private _formBuilder: FormBuilder, private router: Router) { }
+  constructor(private kontaktiService: KontaktiService, private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
 
-    this.firstFormGroup = this._formBuilder.group({
+    this.firstFormGroup = this.formBuilder.group({
 
       ime: new FormControl('', [Validators.required]),
       prezime: new FormControl('', [Validators.required]),
@@ -37,22 +37,22 @@ export class DodajKontaktComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.kontaktiService.getKontakti());
   }
 
-  Spremi = function () {
+  Spremi = function() {
 
-    let kontakti = {
-      "Id": this.id,
-      "Ime": this.ime.value,
-      "Prezime": this.prezime.value,
-      "Telefon": this.telefonskiBroj.value,
-      "Email": this.email.value,
-      "Opis": this.opis.value
+    const kontakti = {
+      Id: this.id,
+      Ime: this.ime.value,
+      Prezime: this.prezime.value,
+      Telefon: this.telefonskiBroj.value,
+      Email: this.email.value,
+      Opis: this.opis.value
 
     };
 
     this.kontaktiService.addKontakt(kontakti);
 
     this.router.navigate(['/popis']);
-  }
+  };
 
   // Getters
 

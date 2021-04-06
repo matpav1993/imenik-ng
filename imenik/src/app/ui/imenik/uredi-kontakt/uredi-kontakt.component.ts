@@ -19,13 +19,13 @@ export class UrediKontaktComponent implements OnInit {
 
   constructor(
     private kontaktiService: KontaktiService,
-    private _formBuilder: FormBuilder,
+    private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit(): void {
 
-    this.firstFormGroup = this._formBuilder.group({
+    this.firstFormGroup = this.formBuilder.group({
 
       ime: new FormControl('', [Validators.required]),
       prezime: new FormControl('', [Validators.required]),
@@ -37,10 +37,10 @@ export class UrediKontaktComponent implements OnInit {
 
     this.route.paramMap.subscribe(params => {
       if (params.get('id') != null) {
-        let id = +params.get('id');
+        const id = +params.get('id');
         this.id = id;
 
-        var kontakt = this.kontaktiService.getKontakt(id);
+        const kontakt = this.kontaktiService.getKontakt(id);
 
         // this.firstFormGroup.setValue(kontakt);
         this.ime.setValue(kontakt.Ime);
@@ -57,20 +57,20 @@ export class UrediKontaktComponent implements OnInit {
 
   }
 
-  Spremi = function () {
+  Spremi = function() {
 
-    let kontakt = {
-      "Id": this.id,
-      "Ime": this.ime.value,
-      "Prezime": this.prezime.value,
-      "Telefon": this.telefonskiBroj.value,
-      "Email": this.email.value,
-      "Opis": this.opis.value
+    const kontakt = {
+      Id: this.id,
+      Ime: this.ime.value,
+      Prezime: this.prezime.value,
+      Telefon: this.telefonskiBroj.value,
+      Email: this.email.value,
+      Opis: this.opis.value
     };
 
     this.kontaktiService.updateKontakt(kontakt);
     this.router.navigate(['/popis']);
-  }
+  };
 
   // Getters
   get ime() {
