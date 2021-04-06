@@ -71,7 +71,7 @@ export class UrediKontaktComponent implements OnInit {
 
     this.kontaktiService.updateKontakt(kontakt);
     this.router.navigate(['/popis']);
-  };
+  }
 
   // Getters
   get ime(): any {
