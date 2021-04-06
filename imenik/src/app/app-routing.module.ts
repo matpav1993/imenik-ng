@@ -8,12 +8,12 @@ import { UrediKontaktComponent } from './ui/imenik/uredi-kontakt/uredi-kontakt.c
 import { TestTableComponent } from './ui/shared/test-table/test-table.component';
 
 const routes: Routes = [
+  { path: '', component: PopisKontaktaComponent },
   { path: 'dodaj', component: DodajKontaktComponent },
   { path: 'uredi/:id', component: UrediKontaktComponent },
   { path: 'detalji/:id', component: DetaljiKontaktaComponent },
-  { path: 'popis', component:  PopisKontaktaComponent },
   { path: 'popis/test', component:  TestTableComponent },
-  { path: '**', component: PopisKontaktaComponent }
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

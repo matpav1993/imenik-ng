@@ -54,16 +54,4 @@ export class TestTableComponent implements OnInit, AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
-  // btnClick= function () {
-  //   this.router.navigate(['/dodaj']);
-  // };
-
-  // Detalji= function () {
-  //   this.router.navigate(['/detalji']);
-  // };
-
-  // Uredi= function () {
-  //   this.router.navigate(['/uredi']);
-  // };
 }

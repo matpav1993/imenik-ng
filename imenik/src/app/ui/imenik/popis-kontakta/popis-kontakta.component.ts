@@ -42,19 +42,19 @@ export class PopisKontaktaComponent implements OnInit, AfterViewInit {
 
   }
 
-  btnClick = function(): void {
+  btnClick(): void {
     this.router.navigate(['/dodaj']);
-  };
+  }
 
-  Detalji = function(idKontakta: number): void {
+  btnDetalji(idKontakta: number): void {
     this.router.navigate(['/detalji/' + idKontakta]);
-  };
+  }
 
-  Uredi = function(idKontakta: number): void {
+  btnUredi(idKontakta: number): void {
     this.router.navigate(['/uredi/' + idKontakta]);
-  };
+  }
 
-  Brisanje(idKontakta: number, ime: string, prezime: string): void {
+  btnBrisanje(idKontakta: number, ime: string, prezime: string): void {
     const dialogRef = this.dialog.open(DialogBrisanjeComponent, {
       data: { title: 'Jeste li sigurni da želite obrisati ovaj kontakt?', imePrezime: ime + ' ' + prezime }
     });
@@ -66,11 +66,7 @@ export class PopisKontaktaComponent implements OnInit, AfterViewInit {
         this.dataSource = new MatTableDataSource(this.kontaktiService.getKontakti());
       }
     });
-
-
   }
-
-
 }
 
 

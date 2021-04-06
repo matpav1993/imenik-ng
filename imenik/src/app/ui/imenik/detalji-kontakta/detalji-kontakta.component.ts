@@ -37,9 +37,6 @@ export class DetaljiKontaktaComponent implements OnInit {
 
   OnInit(): void {
     this.dataSource = new MatTableDataSource(this.kontaktiService.getKontakti());
-
-
-
     this.router.navigate(['/detalji']);
 
 

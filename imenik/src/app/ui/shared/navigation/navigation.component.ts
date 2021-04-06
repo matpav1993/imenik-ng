@@ -1,23 +1,17 @@
-import { Component, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { AccountService } from 'src/app/services/account.service';
+import { Component, Input, Renderer2} from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent{
   @Input() app;
-  jeUlogiran = false;
-  private toggle = false;
 
 
-  constructor(private accountService: AccountService,
+  constructor(
               private renderer: Renderer2) { }
 
-  ngOnInit(): void {
-
-  }
 
   changeThema(): void {
     const hasClass = this.app.classList.contains('custom-theme');

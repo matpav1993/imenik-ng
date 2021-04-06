@@ -32,16 +32,16 @@
           <mat-icon>more_horiz</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="Detalji(element.Id)">
+          <button mat-menu-item (click)="btnDetalji(element.Id)">
             <mat-icon>dialpad</mat-icon>
             <span>Detalji</span>
           </button>
-          <button mat-menu-item (click)="Uredi(element.Id)">
+          <button mat-menu-item (click)="btnUredi(element.Id)">
             <mat-icon>mode_edit</mat-icon>
             <span>Uređivanje</span>
           </button>
           <div class="dialog">
-            <button mat-menu-item (click)="Brisanje(element.Id, element.Ime, element.Prezime)" color="primary">
+            <button mat-menu-item (click)="btnBrisanje(element.Id, element.Ime, element.Prezime)" color="primary">
               <mat-icon>delete_outline</mat-icon>
               <span>Brisanje</span>
             </button>

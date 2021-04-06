@@ -58,7 +58,7 @@ export class UrediKontaktComponent implements OnInit {
 
   }
 
-  Spremi = function(): void {
+  btnSpremi(): void {
 
     const kontakt = {
       Id: this.id,
