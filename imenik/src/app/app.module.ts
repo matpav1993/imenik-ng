@@ -9,7 +9,6 @@ import { DodajKontaktComponent } from './ui/imenik/dodaj-kontakt/dodaj-kontakt.c
 import { PopisKontaktaComponent } from './ui/imenik/popis-kontakta/popis-kontakta.component';
 import { UrediKontaktComponent } from './ui/imenik/uredi-kontakt/uredi-kontakt.component';
 import { DetaljiKontaktaComponent } from './ui/imenik/detalji-kontakta/detalji-kontakta.component';
-import { HomeComponent } from './ui/imenik/home/home.component';
 import { NavigationComponent } from './ui/shared/navigation/navigation.component';
 import { ShortNamePipe } from './short-name.pipe';
 import { TestTableComponent } from './ui/shared/test-table/test-table.component';
@@ -23,7 +22,6 @@ import { NatragButtonComponent } from './ui/natrag-button/natrag-button.componen
     PopisKontaktaComponent,
     UrediKontaktComponent,
     DetaljiKontaktaComponent,
-    HomeComponent,
     NavigationComponent,
     ShortNamePipe,
     TestTableComponent,

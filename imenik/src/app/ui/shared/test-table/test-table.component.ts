@@ -3,13 +3,6 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { KontaktiService } from 'src/app/services/kontakti.service';
-import { Router } from '@angular/router';
-
-// const NAMES: string[] = [
-//   'Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack', 'Charlotte', 'Theodore', 'Isla', 'Oliver',
-//   'Isabella', 'Jasper', 'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'
-// ];
-
 
 @Component({
   selector: 'app-test-table',
@@ -24,16 +17,9 @@ export class TestTableComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private kontaktiService: KontaktiService) {
-    // Create 100 users
-    // const users = [];
 
-    // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(this.kontaktiService.getKontakti());
   }
-
-  // ngOnInit(): void {
-  //   this.dataSource = new MatTableDataSource(this.kontaktiService.getKontakti());
-  // }
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;

@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component} from '@angular/core';
 import { Location } from '@angular/common';
 
 @Component({
@@ -7,7 +7,6 @@ import { Location } from '@angular/common';
   styleUrls: ['./natrag-button.component.scss']
 })
 export class NatragButtonComponent{
-  @Input() mb = true;
   constructor(private location: Location) { }
 
   btnBackClicked(): void {

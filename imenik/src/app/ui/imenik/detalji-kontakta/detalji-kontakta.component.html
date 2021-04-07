@@ -4,80 +4,59 @@
   <button mat-button (click)="accordion.closeAll()">Suzi sve</button>
 </div>
 
+<mat-accordion class="example-headers-align" multi> 
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header >
+    <mat-panel-title>
+      Ime i prezime
+    </mat-panel-title>
+    <mat-panel-description>
+      Osobni podaci
+      <mat-icon>account_circle</mat-icon>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  {{kontakt.Ime}}
+  {{kontakt.Prezime}}
+</mat-expansion-panel>
 
-<mat-accordion class="example-headers-align" multi>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Ime i prezime
-      </mat-panel-title>
-      <mat-panel-description>
-        Osobni podaci
-        <mat-icon>account_circle</mat-icon>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header >
+    <mat-panel-title>
+      Telefonski broj
+    </mat-panel-title>
+    <mat-panel-description>
+      Kontakt
+      <mat-icon>phone</mat-icon>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <span matPrefix>+385 &nbsp;</span>
+  {{kontakt.Telefon}}
+  <a mat-button [href]="'tel:' + kontakt.Telefon"><i class="material-icons">phone_forwarded</i></a>
+</mat-expansion-panel>
 
-    <mat-form-field>
-      <mat-label>Ime</mat-label>
-      <input matInput>{{kontakt.Ime}}
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <mat-label>Prezime</mat-label>
-      <input matInput>{{kontakt.Prezime}}
-    </mat-form-field>
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header >
+    <mat-panel-title>
+      Email
+    </mat-panel-title>
+    <mat-panel-description>
+      Email adresa
+      <mat-icon>email</mat-icon>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  {{kontakt.Email}}
+  <a mat-button [href]="'mailto:' + kontakt.Email"><i class="material-icons">outgoing_mail</i></a>
+</mat-expansion-panel>
 
-  </mat-expansion-panel>
-  <mat-expansion-panel enable>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Telefonski broj
-      </mat-panel-title>
-      <mat-panel-description>
-        Kontakt
-        <mat-icon>phone</mat-icon>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-
-    <mat-form-field>
-      <mat-label>Tel.broj</mat-label>
-      <input matInput>{{kontakt.Telefon}}
-    </mat-form-field>
-    <a mat-button [href]="'tel:' + kontakt.Telefon"><i class="material-icons">phone_forwarded</i></a>
-  </mat-expansion-panel>
-
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Email
-      </mat-panel-title>
-      <mat-panel-description>
-        Email adresa
-        <mat-icon>email</mat-icon>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-
-    <mat-form-field>
-      <mat-label>Email</mat-label>
-
-      <input matInput>{{kontakt.Email}}
-    </mat-form-field>
-    <a mat-button [href]="'mailto:' + kontakt.Email"><i class="material-icons">outgoing_mail</i></a>
-  </mat-expansion-panel>
-
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Opis
-      </mat-panel-title>
-      <mat-panel-description>
-        Dodatne informacije o kontaktu
-        <mat-icon>description</mat-icon>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-
-    <mat-form-field>
-      <mat-label>Opis</mat-label>
-      <input matInput>{{kontakt.Opis}}
-    </mat-form-field>
-  </mat-expansion-panel>
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header >
+    <mat-panel-title>
+      Opis
+    </mat-panel-title>
+    <mat-panel-description>
+      Dodatne informacije o kontaktu
+      <mat-icon>description</mat-icon>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  {{kontakt.Opis}}
+</mat-expansion-panel>
