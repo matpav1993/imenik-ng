@@ -15,10 +15,7 @@ export class DetaljiKontaktaComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   kontakt: any;
 
-  constructor(
-    private kontaktiService: KontaktiService,
-    private route: ActivatedRoute,
-    private router: Router) { }
+  constructor(private kontaktiService: KontaktiService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -43,23 +40,23 @@ export class DetaljiKontaktaComponent implements OnInit {
   }
 
   // Getters
-  get ime(): any {
+  get ime(): string {
     return this.kontakt.get('ime');
   }
 
-  get prezime(): any {
+  get prezime(): string {
     return this.kontakt.get('prezime');
   }
 
-  get telefonskiBroj(): any {
+  get telefonskiBroj(): string {
     return this.kontakt.get('telefonskiBroj');
   }
 
-  get opis(): any {
+  get opis(): string {
     return this.kontakt.get('opis');
   }
 
-  get email(): any {
+  get email(): string {
     return this.kontakt.get('email');
   }
 

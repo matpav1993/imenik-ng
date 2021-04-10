@@ -9,8 +9,7 @@ export class NavigationComponent{
   @Input() app;
 
 
-  constructor(
-              private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2) { }
 
 
   changeThema(): void {

@@ -1,7 +1,6 @@
 <mat-card>
   <app-natrag-button></app-natrag-button>
-  <mat-tab-group dynamicHeight>
-    <mat-tab label="Uređivanje kontakta">
+
 
       <mat-vertical-stepper [linear]="isLinear" #stepper>
         <mat-step [stepControl]="firstFormGroup">
@@ -68,6 +67,5 @@
         </mat-step>
       </mat-vertical-stepper>
 
-    </mat-tab>
-  </mat-tab-group>
+
 </mat-card>
