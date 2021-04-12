@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-povratak-button',
@@ -7,10 +7,10 @@ import { Location } from '@angular/common';
   styleUrls: ['./povratak-button.component.scss']
 })
 export class PovratakButtonComponent{
-  constructor(private location: Location) { }
+  constructor(private router: Router) { }
 
   btnBackClicked(): void {
-    this.location.back();
+    this.router.navigate(['/popis']);
   }
 
 }
