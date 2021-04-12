@@ -13,7 +13,7 @@ import { NavigationComponent } from './ui/shared/navigation/navigation.component
 import { ShortNamePipe } from './short-name.pipe';
 import { TestTableComponent } from './ui/shared/test-table/test-table.component';
 import { DialogBrisanjeComponent } from './ui/shared/dialogs/dialog-brisanje/dialog-brisanje.component';
-import { NatragButtonComponent } from './ui/natrag-button/natrag-button.component';
+import { PovratakButtonComponent } from './ui/povratak-button/povratak-button.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { NatragButtonComponent } from './ui/natrag-button/natrag-button.componen
     ShortNamePipe,
     TestTableComponent,
     DialogBrisanjeComponent,
-    NatragButtonComponent,
+    PovratakButtonComponent,
   ],
   imports: [
     BrowserModule,

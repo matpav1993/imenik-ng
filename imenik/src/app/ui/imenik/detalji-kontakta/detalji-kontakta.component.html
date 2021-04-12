@@ -1,11 +1,10 @@
-<app-natrag-button></app-natrag-button>
+<app-povratak-button></app-povratak-button>
 <div class="example-action-buttons">
   <button mat-button (click)="accordion.openAll()">Proširi sve</button>
   <button mat-button (click)="accordion.closeAll()">Suzi sve</button>
 </div>
-
 <mat-accordion class="example-headers-align" multi> 
-<mat-expansion-panel hideToggle>
+<mat-expansion-panel [expanded]="true">
   <mat-expansion-panel-header >
     <mat-panel-title>
       Ime i prezime
@@ -18,8 +17,7 @@
   {{kontakt.Ime}}
   {{kontakt.Prezime}}
 </mat-expansion-panel>
-
-<mat-expansion-panel hideToggle>
+<mat-expansion-panel [expanded]="true">
   <mat-expansion-panel-header >
     <mat-panel-title>
       Telefonski broj
@@ -33,8 +31,7 @@
   {{kontakt.Telefon}}
   <a mat-button [href]="'tel:' + kontakt.Telefon"><i class="material-icons">phone_forwarded</i></a>
 </mat-expansion-panel>
-
-<mat-expansion-panel hideToggle>
+<mat-expansion-panel [expanded]="true">
   <mat-expansion-panel-header >
     <mat-panel-title>
       Email
@@ -47,8 +44,7 @@
   {{kontakt.Email}}
   <a mat-button [href]="'mailto:' + kontakt.Email"><i class="material-icons">outgoing_mail</i></a>
 </mat-expansion-panel>
-
-<mat-expansion-panel hideToggle>
+<mat-expansion-panel [expanded]="true">
   <mat-expansion-panel-header >
     <mat-panel-title>
       Opis

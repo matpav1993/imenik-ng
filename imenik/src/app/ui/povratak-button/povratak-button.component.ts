@@ -2,11 +2,11 @@ import { Component} from '@angular/core';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-natrag-button',
-  templateUrl: './natrag-button.component.html',
-  styleUrls: ['./natrag-button.component.scss']
+  selector: 'app-povratak-button',
+  templateUrl: './povratak-button.component.html',
+  styleUrls: ['./povratak-button.component.scss']
 })
-export class NatragButtonComponent{
+export class PovratakButtonComponent{
   constructor(private location: Location) { }
 
   btnBackClicked(): void {

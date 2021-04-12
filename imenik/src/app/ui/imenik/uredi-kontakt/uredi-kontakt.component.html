@@ -1,71 +1,88 @@
 <mat-card>
-  <app-natrag-button></app-natrag-button>
+  <app-povratak-button></app-povratak-button>
 
 
-      <mat-vertical-stepper [linear]="isLinear" #stepper>
-        <mat-step [stepControl]="firstFormGroup">
-          <form [formGroup]="firstFormGroup">
-            <ng-template matStepLabel>Ime, Prezime</ng-template>
-            <mat-form-field>
-              <mat-label>Ime</mat-label>
-              <input matInput placeholder="npr. Ana" formControlName="ime" required>
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-              <mat-label>Prezime</mat-label>
-              <input matInput placeholder="npr. Anić" formControlName="prezime" required>
-            </mat-form-field>
-            <div>
-              <button mat-button matStepperNext><i class="material-icons">navigate_next</i>Dalje</button>
-            </div>
-          </form>
-        </mat-step>
-        <mat-step [stepControl]="firstFormGroup">
-          <form [formGroup]="firstFormGroup">
-            <ng-template matStepLabel>Telefonski Broj</ng-template>
-            <form class="example-form">
-              <mat-form-field class="example-full-width">
-                <mat-label>Telefonski broj</mat-label>
-                <span matPrefix>+385 &nbsp;</span>
-                <input type="tel" matInput placeholder="555-555-1234" formControlName="telefonskiBroj" required>
-              </mat-form-field>
-              <!-- <button mat-mini-fab color="accent"><i class="material-icons">add_call</i></button> -->
-            </form>
-            <div>
+  <mat-vertical-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Ime, Prezime</ng-template>
+        <mat-form-field>
+          <mat-label>Ime</mat-label>
+          <input matInput placeholder="npr. Ana" formControlName="ime" minlength="2" maxlength="20" required>
+          <mat-error *ngIf="ime.value === '' && ime.touched">
+            Polje je obavezno.
+          </mat-error>
+          <mat-error *ngIf="ime.value !== '' && ime.value.length < 2 && ime.touched">
+            Polje mora sadržavati min 2 znaka.
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Prezime</mat-label>
+          <input matInput placeholder="npr. Anić" formControlName="prezime" minlength="2" maxlength="50"  required>
+          <mat-error *ngIf="prezime.value === '' && prezime.touched">
+            Polje je obavezno.
+          </mat-error>
+          <mat-error *ngIf="prezime.value !== '' && prezime.value.length < 2 && prezime.touched">
+            Polje mora sadržavati min 2 znaka.
+          </mat-error>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext><i class="material-icons">navigate_next</i>Dalje</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Telefonski Broj</ng-template>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Telefonski broj</mat-label>
+            <span matPrefix>+385 &nbsp;</span>
+            <input type="tel" matInput placeholder="xxx-xxxx" formControlName="telefonskiBroj" required>
+            <mat-error *ngIf="telefonskiBroj.value === '' && telefonskiBroj.touched">
+              Polje je obavezno.
+            </mat-error>
+          </mat-form-field>
+        </form>
+        <div>
 
-              <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Nazad</button>
-              <button mat-button matStepperNext><i class="material-icons">navigate_next</i>Dalje</button>
-            </div>
-          </form>
-        </mat-step>
-        <mat-step [stepControl]="firstFormGroup">
-          <form [formGroup]="firstFormGroup">
-            <ng-template matStepLabel>Email</ng-template>
-            <mat-form-field>
-              <mat-label>Email</mat-label>
-              <input matInput placeholder="test@example.com" formControlName="email" required>
-            </mat-form-field>
-            <div>
-              <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Nazad</button>
-              <button mat-button matStepperNext><i class="material-icons">navigate_next</i>Dalje</button>
-            </div>
-          </form>
-        </mat-step>
-        <mat-step [stepControl]="firstFormGroup">
-          <form [formGroup]="firstFormGroup">
-            <ng-template matStepLabel>Opis</ng-template>
-            <mat-form-field>
-              <mat-label>Opis</mat-label>
-              <input matInput placeholder="opis" formControlName="opis">
-            </mat-form-field>
-            <div>
-              <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Nazad</button>
-              <button mat-button matStepperNext (click)="btnSpremi();" [disabled]="!firstFormGroup.valid"><i
-                  class="material-icons">save</i>Spremi</button>
-            </div>
-          </form>
-        </mat-step>
-      </mat-vertical-stepper>
+          <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Nazad</button>
+          <button mat-button matStepperNext><i class="material-icons">navigate_next</i>Dalje</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Email</ng-template>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="test@example.com" formControlName="email" required>
+          <mat-error *ngIf="email.value === '' && email.touched">
+            Polje je obavezno.
+          </mat-error>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Nazad</button>
+          <button mat-button matStepperNext><i class="material-icons">navigate_next</i>Dalje</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Opis</ng-template>
+        <mat-form-field>
+          <mat-label>Opis</mat-label>
+          <input matInput placeholder="opis" formControlName="opis" max Length= "500">
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Nazad</button>
+          <button mat-button matStepperNext (click)="btnSpremi();" [disabled]="!firstFormGroup.valid"><i
+              class="material-icons">save</i>Spremi</button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-vertical-stepper>
 
 
 </mat-card>

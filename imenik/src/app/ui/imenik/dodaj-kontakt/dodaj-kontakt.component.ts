@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { KontaktiService } from 'src/app/services/kontakti.service';
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
+import { Kontakt } from 'src/app/models/kontakt';
 
 @Component({
   selector: 'app-dodaj-kontakt',
@@ -27,7 +28,7 @@ export class DodajKontaktComponent implements OnInit {
       prezime: new FormControl('', [Validators.required]),
       telefonskiBroj: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
-      opis: new FormControl('', [Validators.required])
+      opis: new FormControl('', []),
     });
 
   }
@@ -39,41 +40,40 @@ export class DodajKontaktComponent implements OnInit {
 
   btnSpremi(): void {
 
-    const kontakti = {
-      Id: this.id,
-      Ime: this.ime.value,
-      Prezime: this.prezime.value,
-      Telefon: this.telefonskiBroj.value,
-      Email: this.email.value,
-      Opis: this.opis.value
+    const kontakt = new Kontakt(
+      this.id,
+      this.ime.value,
+      this.prezime.value,
+      this.telefonskiBroj.value,
+      this.email.value,
+      this.opis.value);
 
-    };
 
-    this.kontaktiService.addKontakt(kontakti);
+    this.kontaktiService.addKontakt(kontakt);
 
     this.router.navigate(['/popis']);
   }
 
   // Getters
 
-  get ime(): any {
+  get ime(): AbstractControl {
     return this.firstFormGroup.get('ime');
   }
 
-  get prezime(): any {
+  get prezime(): AbstractControl {
     return this.firstFormGroup.get('prezime');
   }
 
-  get telefonskiBroj(): any {
+  get telefonskiBroj(): AbstractControl {
     return this.firstFormGroup.get('telefonskiBroj');
   }
 
 
-  get opis(): any {
+  get opis(): AbstractControl {
     return this.firstFormGroup.get('opis');
   }
 
-  get email(): any {
+  get email(): AbstractControl {
     return this.firstFormGroup.get('email');
   }
 }

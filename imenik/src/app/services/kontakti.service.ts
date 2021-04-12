@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Kontakt } from '../models/kontakt';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ export class KontaktiService {
 
   constructor() { }
 
-  getKontakti(): any {
+  getKontakti(): Kontakt[] {
 
     const kontakti = localStorage.getItem('kontakti');
 
@@ -19,11 +20,11 @@ export class KontaktiService {
 
   }
 
-  private saveKontakti(kontakti): void {
+  private saveKontakti(kontakti: Kontakt[]): void {
     localStorage.setItem('kontakti', JSON.stringify(kontakti));
   }
 
-  addKontakt(kontakt): void {
+  addKontakt(kontakt: Kontakt): void {
 
     kontakt.Id = this.generateId();
 
@@ -34,7 +35,7 @@ export class KontaktiService {
 
   }
 
-  getKontakt(id): any {
+  getKontakt(id: number): Kontakt {
 
     const kontakti = this.getKontakti();
     const indexKontakta = kontakti.findIndex((k => k.Id === id));
@@ -43,7 +44,7 @@ export class KontaktiService {
 
   }
 
-  updateKontakt(kontakt): void {
+  updateKontakt(kontakt: Kontakt): void {
 
     const kontakti = this.getKontakti();
     const indexKontakta = kontakti.findIndex((k => k.Id === kontakt.Id));
@@ -58,7 +59,7 @@ export class KontaktiService {
 
   }
 
-  deleteKontakt(id): void {
+  deleteKontakt(id: number): void {
 
     let kontakti = this.getKontakti();
     kontakti = kontakti.filter(k => k.Id !== id);
