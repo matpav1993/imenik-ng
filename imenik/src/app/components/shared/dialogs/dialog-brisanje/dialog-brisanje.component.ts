@@ -14,9 +14,7 @@ export class DialogBrisanjeComponent implements OnInit {
 
   dataSource: MatTableDataSource<KontaktInterface>;
   // @ViewChild('app') app: any;
-  renderer2: any;
-
-
+  // renderer2: any;
 
   constructor(
     private kontaktiService: KontaktiService,

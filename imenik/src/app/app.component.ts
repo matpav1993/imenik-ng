@@ -11,8 +11,8 @@ export class AppComponent {
 
   title = 'imenik';
 
-  constructor() {
-  }
+  // constructor() {
+  // }
 
   // themeChange(): void {
   //   const classList = this.app.nativeElement.classList;
