@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, Renderer2} from '@angular/core';
+import { Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
@@ -7,13 +7,13 @@ import { Component, EventEmitter, Input, Output, Renderer2} from '@angular/core'
 })
 export class NavigationComponent{
 
-  @Output() themeChange: EventEmitter<string> = new EventEmitter<string>();
+  // @Output() themeChange: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
-  changeThema(): void {
-      this.themeChange.emit('1');
-  }
+  // changeThema(): void {
+  //     this.themeChange.emit('1');
+  // }
 
 }
 
