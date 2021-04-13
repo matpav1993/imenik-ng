@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatAccordion } from '@angular/material/expansion';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
+import { KontaktInterface } from 'src/app/models/kontakt-interface';
 import { KontaktiService } from 'src/app/services/kontakti.service';
 
 @Component({
@@ -12,7 +13,7 @@ import { KontaktiService } from 'src/app/services/kontakti.service';
 export class DetaljiKontaktaComponent implements OnInit {
   @ViewChild(MatAccordion) accordion: MatAccordion;
   id: number;
-  dataSource: MatTableDataSource<any>;
+  dataSource: MatTableDataSource<KontaktInterface>;
   kontakt: any;
 
   constructor(private kontaktiService: KontaktiService, private route: ActivatedRoute, private router: Router) { }

@@ -4,6 +4,7 @@ import { KontaktiService } from 'src/app/services/kontakti.service';
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 import { Kontakt } from 'src/app/models/kontakt';
+import { KontaktInterface } from 'src/app/models/kontakt-interface';
 
 @Component({
   selector: 'app-dodaj-kontakt',
@@ -14,7 +15,7 @@ export class DodajKontaktComponent implements OnInit {
 
   isLinear = false;
   firstFormGroup: FormGroup;
-  dataSource: MatTableDataSource<any>;
+  dataSource: MatTableDataSource<KontaktInterface>;
   id: number;
 
 

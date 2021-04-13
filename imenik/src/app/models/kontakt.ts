@@ -1,4 +1,6 @@
-export class Kontakt {
+import { KontaktInterface } from './kontakt-interface';
+
+export class Kontakt implements KontaktInterface {
     Id: number;
     Ime: string;
     Prezime: string;

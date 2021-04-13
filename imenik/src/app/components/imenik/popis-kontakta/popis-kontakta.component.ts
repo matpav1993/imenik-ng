@@ -6,6 +6,8 @@ import { MatSort } from '@angular/material/sort';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogBrisanjeComponent } from '../../shared/dialogs/dialog-brisanje/dialog-brisanje.component';
+import { Kontakt } from 'src/app/models/kontakt';
+import { KontaktInterface } from 'src/app/models/kontakt-interface';
 
 @Component({
   selector: 'app-popis-kontakta',
@@ -17,7 +19,7 @@ export class PopisKontaktaComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
 
   displayedColumns: string[] = ['ini', 'Ime', 'Prezime', 'actions'];
-  dataSource: MatTableDataSource<any>;
+  dataSource: MatTableDataSource<KontaktInterface>;
 
   constructor(private kontaktiService: KontaktiService, private router: Router, public dialog: MatDialog) { }
 

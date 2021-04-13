@@ -3,6 +3,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { KontaktInterface } from 'src/app/models/kontakt-interface';
 import { KontaktiService } from 'src/app/services/kontakti.service';
 
 @Component({
@@ -12,7 +13,7 @@ import { KontaktiService } from 'src/app/services/kontakti.service';
 })
 export class DialogBrisanjeComponent implements OnInit {
 
-  dataSource: MatTableDataSource<any>;
+  dataSource: MatTableDataSource<KontaktInterface>;
 
 
   constructor(
