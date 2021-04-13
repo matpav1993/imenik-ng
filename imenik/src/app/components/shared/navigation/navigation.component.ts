@@ -1,4 +1,4 @@
-import { Component, Input, Renderer2} from '@angular/core';
+import { Component, EventEmitter, Input, Output, Renderer2} from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
@@ -6,19 +6,13 @@ import { Component, Input, Renderer2} from '@angular/core';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent{
-  @Input() app;
 
+  @Output() themeChange: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private renderer: Renderer2) { }
-
+  constructor() { }
 
   changeThema(): void {
-    const hasClass = this.app.classList.contains('custom-theme');
-    if (hasClass) {
-      this.renderer.removeClass(this.app, 'custom-theme');
-    } else {
-      this.renderer.addClass(this.app, 'custom-theme');
-    }
+      this.themeChange.emit('1');
   }
 
 }

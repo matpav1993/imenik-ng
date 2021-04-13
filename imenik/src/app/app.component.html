@@ -1,5 +1,5 @@
 <div #app>
-    <app-navigation [app]="app"></app-navigation>
+    <app-navigation (themeChange)="themeChange()"></app-navigation>
     <div style="padding: 15px;">
         <router-outlet></router-outlet>
     </div>
